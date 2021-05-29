@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+
+    <style>
+        body{
+            /* margin-left:200px;
+            margin-right: 200px; */
+            margin:0px;
+            font-family:Arial;
+            padding:0px;
+        }
+        
+        /*Display mayor*/
+        .container{
+            display:grid;
+            grid-template-columns: 60px 1fr;
+            grid-template-rows: 70px 1fr;
+            height: 150vh;
+            justify-content:center;
+            grid-template-areas: "inicio inicio"
+                                "tiraroja subcontainer"
+                                "tiraroja subcontainer";
+            margin:0px;
+        }   
+
+        .inicio{
+            display:grid;
+            grid-template-columns: 15% 1fr 20%;
+            background: #cdcdcd;
+             /* Sombra normal */
+            box-shadow: 2px 2px 10px #666;
+            /* Sombra superior sin desenfoque */
+            box-shadow: 5px -5px 0 2px #444;
+            /* Sombra interior */
+            box-shadow: 5px 5px 25px #222 inset;
+            
+            
+        }
+
+        .ultimoitem{
+            align-items: center;
+
+        }
+
+        .ultimoitem img{
+            max-width: 50px;
+        }
+
+        .tiraroja{
+            grid-area: tiraroja;
+            display:grid;
+            grid-template-rows: 15% 15% 1fr 10%;
+            grid-gap:5px 10px;
+            background: rgba(244, 96,103);
+            justify-content: center;
+            padding:0px;
+            
+        }
+
+    
+        .ptira{
+            color:white;
+            padding:0px;
+            margin:0px;
+            font-size: 10px;
+            text-align: center;
+        }
+        .home{
+            max-width: 40px;
+            
+        }
+        
+        .inicio{
+            grid-area:inicio;
+        }
+
+        .item{
+            padding:10px 0px;
+        }
+
+        
+        /*display menor*/
+        .subcontainer{
+            grid-area:subcontainer;
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows:20px 1fr 20px 1fr 20px 1fr;
+            grid-gap: 10px 40px;
+            padding:30px;
+            font-size: 12px;
+            background-color: #e0e0e0;
+        }
+
+        .subitem{
+            display: flex;
+            padding:0px;
+            overflow: hidden;
+            align-items: flex-end;
+
+        }
+
+        .cine, .cine2, .cine3{
+            grid-column:1/4;
+            padding:0px;
+            margin:0px;
+
+        }
+        
+        h3{
+            margin:0px;
+        }
+
+        .pelicula1{
+            background-image: url("images/1.jpg");
+            background-repeat:no-repeat;
+            background-size: 400px 280px;
+            
+        }
+    
+        .pelicula2{
+            background-image: url("images/2.jpg");
+            background-repeat:no-repeat;
+            background-size: 400px 280px;
+        }
+    
+        .pelicula3{
+            background-image: url("images/3.jpg");
+            background-repeat:no-repeat;
+            background-size: 400px 280px;
+        }
+    
+        .pelicula4{
+            background-image: url("images/4.jpg");
+            background-repeat:no-repeat;
+            background-size: 400px 280px;
+        }
+    
+        .pelicula5{
+            background-image: url("images/5.jpg");
+            background-repeat:no-repeat;
+            background-size: 400px 280px;
+        }
+    
+        .pelicula6{
+            background-image: url("images/6.jpg");
+            background-repeat:no-repeat;
+            background-size: 400px 280px;
+        }
+    
+        .pelicula7{
+            background-image: url("images/7.jpg");
+            background-repeat:no-repeat;
+            background-size: 400px 280px;
+        }
+    
+        .pelicula8{
+            background-image: url("images/8.jpg");
+            background-repeat:no-repeat;
+            background-size: 400px 280px;
+        }
+    
+        .pelicula9{
+            background-image: url("images/9.jpg");
+            background-repeat:no-repeat;
+            background-size: 400px 280px;
+        }
+    
+        .descripcion{                       
+            color:white;
+            background: rgba(224, 144, 148, 0.822);
+            margin:0px;
+            font-size: 16px;
+            padding:5px;
+        }
+        .descripcion2{                       
+            color:white;
+            background: rgba(224, 144, 148, 0.822);
+            margin:0px;
+            font-size: 10px;
+            padding:5px;
+        }
+
+        span{
+            font-family: cursive;
+            font-size:40px;
+        }
+
+        input{
+            justify-content: center;
+            width: 95%;
+            margin:10px;
+            border-radius: 5px;
+            border:none;
+            height: 30px;
+        }
+
+        .usuario img{
+            max-width: 50px;
+            border-radius: 20px;
+            margin:0px;
+        }
+
+        .usuario{
+            display:flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            margin-right: 10px;
+        }
+
+        @media screen and (max-width: 768px){
+            .subcontainer{
+                grid-template-columns: repeat(2,1fr);
+                
+            }
+
+            span{
+                font-size: 20px;
+            }
+
+            .inicio{
+                grid-template-columns: 20% 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item tiraroja">
+            <div class="subtira">
+                <img class="home" src="images/home.png" alt="">
+                <p class="ptira">Home</p>
+            </div>
+            <div class="subtira">
+                <img class="home" src="images/fuego.png" alt="">
+                <p class="ptira">Trending</p>
+            </div>
+            <div class="subtira">
+                <img class="home" src="images/corazon.png" alt="">
+                <p class="ptira">Mas likes</p>
+            </div>
+            <div class="subtira">
+                <img class="home" src="images/ajustes.png" alt="">
+                <p class="ptira">Ajustes</p>
+            </div>
+            
+
+        </div>
+        <div class="item subcontainer">
+            <div class="cine"><h3 class="peli">Ahora en cine</h3></div>
+            <div class="subitem pelicula1">
+                <div>
+                    <p class="descripcion">Vida secreta de las mascotas</p>
+                    <p class="descripcion2">Tiene lugar en un edificio de departamentos en Manhattan, donde vive felizmente Max, hasta que su dueña trae a casa a un enorme perro de nombre Duke</p>
+                </div>
+
+            </div>
+            <div class="subitem pelicula2">
+                <div>
+                    <p class="descripcion">Guasón</p>
+                    <p class="descripcion2"> El repudio social, la marginación y una serie de trágicos acontecimientos lo conducen por el sendero de la locura y, finalmente, cae en el mundo del crimen.</p>
+                </div>
+                
+            </div>
+            <div class="subitem  pelicula3">
+                <div>
+                    <p class="descripcion">Toy Story 4</p>
+                    <p class="descripcion2">Woody descubrirá lo grande que puede ser el mundo para un juguete cuando Forky se convierta en su nuevo compañero de habitación</p>
+                </div>
+            </div>
+            <div class="cine2"><h3 class="peli">Aclamadas por la crítica<h3></div>
+            <div class="subitem  pelicula4">
+                <div>
+                    <p class="descripcion">Frozen2</p>
+                    <p class="descripcion2">Elsa tiene un poder extraordinario. Sin embargo, a pesar de lo feliz que la hacen los habitantes de Arendelle, siente que no encaja allá. </p>
+                </div>
+            </div>
+            <div class="subitem  pelicula5">
+                <div>
+                    <p class="descripcion">Amigo abominable</p>
+                    <p class="descripcion2">La joven Yi descubre a un yeti en la azotea de su edificio en Shanghái. La criatura se ha escapado del laboratorio y está siendo buscada por toda la ciudad. </p>
+                </div>
+            </div>
+            <div class="subitem  pelicula6">
+                <div>
+                    <p class="descripcion">Avengers</p>
+                    <p class="descripcion2">El director de la Agencia SHIELD decide reclutar a un equipo para salvar al mundo de un desastre cuando un enemigo inesperado surge como una amenaza</p>
+                </div>
+            </div>
+            <div class="cine3"><h3 class="peli">No te puedes perder</h3></div>
+            <div class="subitem  pelicula7">
+                <div>
+                    <p class="descripcion">Coco</p>
+                    <p class="descripcion2">Miguel es un niño que sueña con ser músico, pero su familia se lo prohíbe porque su tatarabuelo, músico, los abandonó, y quieren obligar a Miguel a ser zapatero.</p>
+                </div>
+            </div>
+            <div class="subitem  pelicula8">
+                <div>
+                    <p class="descripcion">Bob esponja</p>
+                    <p class="descripcion2">La existencia en Fondo Bikini, hogar de Bob Esponja y sus amigos, transcurre plácidamente hasta que todos ellos se embarcan en una odisea que los lleva a descubrir nuevos mundos y peligrosos monstruos.</p>
+                </div>
+            </div>
+            <div class="subitem  pelicula9">
+                <div>
+                    <p class="descripcion">El hoyo</p>
+                    <p class="descripcion2">n el futuro, los prisioneros se alojan en celdas verticales, observando cómo los presos de las celdas superiores son alimentados mientras los de abajo mueren de hambre.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="item inicio">
+
+            <div class="ultimoitem">
+                <img src="images/palomita.png">
+                <span>Movi.s</span>
+            </div>
+
+            <div class="ultimoitem input">
+                <input type="text" placeholder="Busca tu peli, actor, actriz o director favorito">
+            </div>
+
+            <div class="ultimoitem usuario">
+                <img src="images/icono.jpg">
+                <img src="images/desplegar.png" style="max-width: 20px;">
+            </div>
+
+            
+
+            
+        </div>
+    
+    </div>
+    
+</body>
+</html>
